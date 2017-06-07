@@ -43,7 +43,6 @@
         return;
     }
     
-            //imageView
     
     self.titleLabel.text = _detail.title;
     self.textView.text = _detail.itemDescription;

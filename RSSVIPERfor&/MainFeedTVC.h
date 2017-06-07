@@ -15,7 +15,8 @@
 
 
 @property (strong,nonatomic) NSArray *dataLenta;
-//@property (strong,nonatomic) NSArray *dataGazeta;
+@property (strong,nonatomic) NSArray *dataGazeta;
+@property (strong,nonatomic) NSArray *allData;
 
 
 

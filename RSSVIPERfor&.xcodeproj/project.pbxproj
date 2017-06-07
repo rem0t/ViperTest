@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0D54B41EE8BD2D007D31C0 /* noimage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D54B31EE8BD2C007D31C0 /* noimage.jpeg */; };
 		0F3016EF1EE1925500501EBD /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3016DF1EE1925500501EBD /* AFNetworkActivityIndicatorManager.m */; };
 		0F3016F01EE1925500501EBD /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3016E11EE1925500501EBD /* UIActivityIndicatorView+AFNetworking.m */; };
 		0F3016F11EE1925500501EBD /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3016E31EE1925500501EBD /* UIAlertView+AFNetworking.m */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0D54B31EE8BD2C007D31C0 /* noimage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpeg; sourceTree = "<group>"; };
 		0F3016DE1EE1925500501EBD /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		0F3016DF1EE1925500501EBD /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		0F3016E01EE1925500501EBD /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -104,6 +106,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0D54AA1EE7FC74007D31C0 /* ROUTER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ROUTER;
+			sourceTree = "<group>";
+		};
+		0F0D54AB1EE7FC94007D31C0 /* PRESENTER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PRESENTER;
+			sourceTree = "<group>";
+		};
+		0F0D54AC1EE7FCA4007D31C0 /* INTERACTOR */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = INTERACTOR;
+			sourceTree = "<group>";
+		};
+		0F0D54AD1EE7FCB7007D31C0 /* ASSEMBLY */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ASSEMBLY;
+			sourceTree = "<group>";
+		};
+		0F0D54AE1EE7FCCB007D31C0 /* Moduls */ = {
+			isa = PBXGroup;
+			children = (
+				0F0D54AD1EE7FCB7007D31C0 /* ASSEMBLY */,
+				0F0D54AB1EE7FC94007D31C0 /* PRESENTER */,
+				0F0D54AA1EE7FC74007D31C0 /* ROUTER */,
+				0FF8CF831EE702750067BCDF /* PRESENTER */,
+				0F0D54AC1EE7FCA4007D31C0 /* INTERACTOR */,
+				0FF8CF821EE7014B0067BCDF /* VIEW */,
+			);
+			name = Moduls;
+			sourceTree = "<group>";
+		};
+		0F0D54AF1EE80014007D31C0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				0F5AD0551EDEF53400E81F88 /* CastomTVC.h */,
+				0F5AD0561EDEF53400E81F88 /* CastomTVC.m */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		0F0D54B01EE82EE3007D31C0 /* detailVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F5AD07B1EE060C100E81F88 /* DetailVC.h */,
+				0F5AD07C1EE060C100E81F88 /* DetailVC.m */,
+			);
+			name = detailVC;
+			sourceTree = "<group>";
+		};
+		0F0D54B11EE82F09007D31C0 /* maiFeedVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F0D54AF1EE80014007D31C0 /* cell */,
+				0F53B55A1EDDA61E00D098AF /* MainFeedTVC.h */,
+				0F53B55B1EDDA61E00D098AF /* MainFeedTVC.m */,
+			);
+			name = maiFeedVC;
+			sourceTree = "<group>";
+		};
+		0F0D54B21EE82F52007D31C0 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				0F53B54C1EDDA40900D098AF /* Main.storyboard */,
+				0F53B54F1EDDA40900D098AF /* Assets.xcassets */,
+				0F0D54B31EE8BD2C007D31C0 /* noimage.jpeg */,
+				0F53B5511EDDA40900D098AF /* LaunchScreen.storyboard */,
+				0F53B5541EDDA40900D098AF /* Info.plist */,
+			);
+			name = Resourses;
+			sourceTree = "<group>";
+		};
 		0F3016DD1EE1925500501EBD /* UIKit+AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,18 +230,10 @@
 		0F53B5421EDDA40900D098AF /* RSSVIPERfor& */ = {
 			isa = PBXGroup;
 			children = (
+				0F0D54AE1EE7FCCB007D31C0 /* Moduls */,
 				0F53B5461EDDA40900D098AF /* AppDelegate.h */,
 				0F53B5471EDDA40900D098AF /* AppDelegate.m */,
-				0F5AD07B1EE060C100E81F88 /* DetailVC.h */,
-				0F5AD07C1EE060C100E81F88 /* DetailVC.m */,
-				0F5AD0551EDEF53400E81F88 /* CastomTVC.h */,
-				0F5AD0561EDEF53400E81F88 /* CastomTVC.m */,
-				0F53B55A1EDDA61E00D098AF /* MainFeedTVC.h */,
-				0F53B55B1EDDA61E00D098AF /* MainFeedTVC.m */,
-				0F53B54C1EDDA40900D098AF /* Main.storyboard */,
-				0F53B54F1EDDA40900D098AF /* Assets.xcassets */,
-				0F53B5511EDDA40900D098AF /* LaunchScreen.storyboard */,
-				0F53B5541EDDA40900D098AF /* Info.plist */,
+				0F0D54B21EE82F52007D31C0 /* Resourses */,
 				0F53B5431EDDA40900D098AF /* Supporting Files */,
 			);
 			path = "RSSVIPERfor&";
@@ -220,6 +295,22 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		0FF8CF821EE7014B0067BCDF /* VIEW */ = {
+			isa = PBXGroup;
+			children = (
+				0F0D54B01EE82EE3007D31C0 /* detailVC */,
+				0F0D54B11EE82F09007D31C0 /* maiFeedVC */,
+			);
+			name = VIEW;
+			sourceTree = "<group>";
+		};
+		0FF8CF831EE702750067BCDF /* PRESENTER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PRESENTER;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F0D54B41EE8BD2D007D31C0 /* noimage.jpeg in Resources */,
 				0F53B5531EDDA40900D098AF /* LaunchScreen.storyboard in Resources */,
 				0F53B5501EDDA40900D098AF /* Assets.xcassets in Resources */,
 				0F53B54E1EDDA40900D098AF /* Main.storyboard in Resources */,

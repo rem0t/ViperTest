@@ -29,17 +29,15 @@
     //http://lenta.ru/rss
     
     NSURL *urlLenta = [NSURL URLWithString:@"http://lenta.ru/rss"];
- //   NSURL *urlGazeta = [NSURL URLWithString:@"http://www.gazeta.ru/export/rss/lenta.xml"];
 
     NSURLRequest *requestLenta = [[NSURLRequest alloc]initWithURL:urlLenta];
-  //  NSURLRequest *requestGazeta = [[NSURLRequest alloc]initWithURL:urlGazeta];
 
     
     [RSSParser parseRSSFeedForRequest:requestLenta success:^(NSArray *feedItems) {
         
         _dataLenta = feedItems;
-        
-        [self.tableView reloadData];
+
+        [self testMethod];
         
     } failure:^(NSError *error) {
         
@@ -49,12 +47,48 @@
 //        
 //        _dataGazeta = feedItems;
 //
+//
+//        [_allData addObjectsFromArray: _dataGazeta];
 //        
+//        [self.tableView reloadData];
+//
+//
 //    } failure:^(NSError *error) {
 //        
 //    }];
+//    
+//
+    
+
+    
     
 }
+
+-(void)testMethod{
+    
+    NSURL *urlGazeta = [NSURL URLWithString:@"http://www.gazeta.ru/export/rss/lenta.xml"];
+    NSURLRequest *requestGazeta = [[NSURLRequest alloc]initWithURL:urlGazeta];
+
+    
+    
+    [RSSParser parseRSSFeedForRequest:requestGazeta success:^(NSArray *feedItems) {
+    
+            _dataGazeta = feedItems;
+    
+    
+        self.allData = [_dataGazeta arrayByAddingObjectsFromArray:_dataLenta];
+
+    
+            [self.tableView reloadData];
+    
+    
+        } failure:^(NSError *error) {
+            
+        }];
+        
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,7 +104,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.dataLenta count] ;
+    return [self.allData count] ;
 }
 
 
@@ -78,12 +112,32 @@
     
     CastomTVC *castomCell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    RSSItem *item = [_dataLenta objectAtIndex:indexPath.row];
+    RSSItem *item = [_allData objectAtIndex:indexPath.row];
     
     castomCell.titleLable.text = item.title;
-    castomCell.sourceLable.text = item.author;
-    NSURL *imageURL = [item link];
+    
+// **** formating the string
+    
+    NSString *separatorString = @"/";
+    NSString *myString = item.guid;
+    NSString *newStr = [myString substringFromIndex:8];
+    NSString *myNewString = [newStr componentsSeparatedByString:separatorString].firstObject;
+    
+    castomCell.sourceLable.text = myNewString;
+
+    
+// *** do another method for this?
+    
+    
+    
+    NSURL *imageURL = item.link;
+    
+  
     [castomCell.feedImage setImageWithURL:imageURL];
+
+    
+    
+    
   
     return castomCell;
 }
@@ -104,15 +158,12 @@
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if (indexPath) {
-        RSSItem *item = [_dataLenta objectAtIndex:indexPath.row];
+        RSSItem *item = [_allData objectAtIndex:indexPath.row];
         [segue.destinationViewController setDetail:item];
     
-        
     }
     
 }
-
-
 
 
 
