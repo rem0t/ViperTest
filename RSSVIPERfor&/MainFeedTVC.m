@@ -38,7 +38,7 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshTableEnd)
+                                             selector:@selector(refreshTable)
                                                  name:@"MyNotification"
                                                object:nil];
 
@@ -46,21 +46,9 @@
 }
 
 
--(void) refreshTableBegin { // not work
-    
-    refreshControl = [[UIRefreshControl alloc]init];
-    
-    [refreshControl addTarget:self action:@selector(refreshTableEnd) forControlEvents:UIControlEventValueChanged];
-    
-    [self.tableView addSubview:refreshControl];
-    
-}
 
-
-- (void) refreshTableEnd {
+- (void) refreshTable {
     
-
-    [refreshControl endRefreshing];
     
     [self.tableView reloadData];
 
