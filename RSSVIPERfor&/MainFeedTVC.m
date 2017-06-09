@@ -8,15 +8,18 @@
 
 #import "MainFeedTVC.h"
 #import "CastomTVC.h"
-#import "RSSParser.h"
 #import "DetailVC.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface MainFeedTVC () {
     
+  UIRefreshControl *refreshControl;
+    NSArray *allData;
+    
 }
 
 @end
+
 
 @implementation MainFeedTVC
 
@@ -25,69 +28,46 @@
 
     self.navigationItem.title = @"RSSforRambler&co";
     
-    //http://www.gazeta.ru/export/rss/lenta.xml
-    //http://lenta.ru/rss
     
-    NSURL *urlLenta = [NSURL URLWithString:@"http://lenta.ru/rss"];
-
-    NSURLRequest *requestLenta = [[NSURLRequest alloc]initWithURL:urlLenta];
+    self.manager = [[NetworkManager alloc]init];
 
     
-    [RSSParser parseRSSFeedForRequest:requestLenta success:^(NSArray *feedItems) {
-        
-        _dataLenta = feedItems;
-
-        [self testMethod];
-        
-    } failure:^(NSError *error) {
-        
-    }];
-   
-//    [RSSParser parseRSSFeedForRequest:requestGazeta success:^(NSArray *feedItems) {
-//        
-//        _dataGazeta = feedItems;
-//
-//
-//        [_allData addObjectsFromArray: _dataGazeta];
-//        
-//        [self.tableView reloadData];
-//
-//
-//    } failure:^(NSError *error) {
-//        
-//    }];
-//    
-//
+    [self.manager parseLentaMethod];
     
-
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshTableEnd)
+                                                 name:@"MyNotification"
+                                               object:nil];
+
     
 }
 
--(void)testMethod{
-    
-    NSURL *urlGazeta = [NSURL URLWithString:@"http://www.gazeta.ru/export/rss/lenta.xml"];
-    NSURLRequest *requestGazeta = [[NSURLRequest alloc]initWithURL:urlGazeta];
 
-    
-    
-    [RSSParser parseRSSFeedForRequest:requestGazeta success:^(NSArray *feedItems) {
-    
-            _dataGazeta = feedItems;
-    
-    
-        self.allData = [_dataGazeta arrayByAddingObjectsFromArray:_dataLenta];
 
+
+-(void) refreshTableBegin { // not work
     
-            [self.tableView reloadData];
+    refreshControl = [[UIRefreshControl alloc]init];
     
+    [refreshControl addTarget:self action:@selector(refreshTableEnd) forControlEvents:UIControlEventValueChanged];
     
-        } failure:^(NSError *error) {
-            
-        }];
-        
+    [self.tableView addSubview:refreshControl];
     
 }
+
+
+- (void) refreshTableEnd {
+    
+
+    [refreshControl endRefreshing];
+    
+    [self.tableView reloadData];
+
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -95,7 +75,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -104,15 +87,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.allData count] ;
+    return [self.manager.sortedArray count];
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     CastomTVC *castomCell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    RSSItem *item = [_allData objectAtIndex:indexPath.row];
+    
+    RSSItem *item = [self.manager.sortedArray objectAtIndex:indexPath.row];
     
     castomCell.titleLable.text = item.title;
     
@@ -129,18 +115,18 @@
 // *** do another method for this?
     
     
-    
     NSURL *imageURL = item.link;
     
   
-    [castomCell.feedImage setImageWithURL:imageURL];
-
-    
-    
+    [castomCell.feedImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"noimage"]];
     
   
     return castomCell;
 }
+
+
+
+
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -153,12 +139,13 @@
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender { // send data to detailMVC
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if (indexPath) {
-        RSSItem *item = [_allData objectAtIndex:indexPath.row];
+        RSSItem *item = [self.manager.sortedArray objectAtIndex:indexPath.row];
         [segue.destinationViewController setDetail:item];
     
     }

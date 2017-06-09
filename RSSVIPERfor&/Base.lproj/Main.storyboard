@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VzT-8F-LiV" id="wQ8-g6-FF5">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="38q-VK-0Qm">
@@ -132,9 +132,9 @@
                                             <constraint firstItem="euV-I2-Wwv" firstAttribute="trailing" secondItem="bzG-eI-tbj" secondAttribute="trailing" id="Kgb-w3-3Md"/>
                                             <constraint firstItem="bzG-eI-tbj" firstAttribute="bottom" secondItem="euV-I2-Wwv" secondAttribute="bottom" constant="-2" id="LeS-Lw-xxc"/>
                                             <constraint firstItem="bzG-eI-tbj" firstAttribute="leading" secondItem="o9B-JQ-eys" secondAttribute="leading" id="Nhc-FT-9rQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="o9B-JQ-eys" secondAttribute="bottom" constant="-2" id="jLU-7u-gMZ"/>
                                             <constraint firstItem="euV-I2-Wwv" firstAttribute="leading" secondItem="2xo-8s-GJ4" secondAttribute="leading" id="luO-bJ-Rjj"/>
                                             <constraint firstAttribute="trailing" secondItem="euV-I2-Wwv" secondAttribute="trailing" id="tUJ-vs-4KZ"/>
+                                            <constraint firstItem="o9B-JQ-eys" firstAttribute="top" secondItem="bzG-eI-tbj" secondAttribute="bottom" constant="3" id="tYt-vE-6y7"/>
                                             <constraint firstItem="euV-I2-Wwv" firstAttribute="top" secondItem="2xo-8s-GJ4" secondAttribute="top" constant="-64" id="tZR-QS-IKk"/>
                                             <constraint firstItem="bzG-eI-tbj" firstAttribute="trailing" secondItem="o9B-JQ-eys" secondAttribute="trailing" id="uIp-Me-A1G"/>
                                         </constraints>

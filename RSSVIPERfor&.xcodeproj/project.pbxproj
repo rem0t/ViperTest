@@ -35,6 +35,7 @@
 		0F5AD10E1EE0A59A00E81F88 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AD1031EE0A59A00E81F88 /* AFURLRequestSerialization.m */; };
 		0F5AD10F1EE0A59A00E81F88 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AD1051EE0A59A00E81F88 /* AFURLResponseSerialization.m */; };
 		0F5AD1101EE0A59A00E81F88 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AD1071EE0A59A00E81F88 /* AFURLSessionManager.m */; };
+		0F805F291EEA0C5C00051ABF /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F805F281EEA0C5C00051ABF /* NetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,8 @@
 		0F5AD1051EE0A59A00E81F88 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		0F5AD1061EE0A59A00E81F88 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		0F5AD1071EE0A59A00E81F88 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		0F805F271EEA0C5C00051ABF /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		0F805F281EEA0C5C00051ABF /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		0F0D54AC1EE7FCA4007D31C0 /* INTERACTOR */ = {
 			isa = PBXGroup;
 			children = (
+				0F805F271EEA0C5C00051ABF /* NetworkManager.h */,
+				0F805F281EEA0C5C00051ABF /* NetworkManager.m */,
 			);
 			name = INTERACTOR;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				0F3016F61EE1925500501EBD /* UIWebView+AFNetworking.m in Sources */,
 				0F5AD10B1EE0A59A00E81F88 /* AFNetworkReachabilityManager.m in Sources */,
 				0F3016F31EE1925500501EBD /* UIImageView+AFNetworking.m in Sources */,
+				0F805F291EEA0C5C00051ABF /* NetworkManager.m in Sources */,
 				0F5AD1091EE0A59A00E81F88 /* AFHTTPRequestOperationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
