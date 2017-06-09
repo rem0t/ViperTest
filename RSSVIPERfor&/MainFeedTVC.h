@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkManager.h"
 
 
 @interface MainFeedTVC : UIViewController <UITableViewDataSource,UITableViewDelegate>
@@ -14,10 +15,9 @@
 @property (strong,nonatomic) IBOutlet UITableView *tableView;
 
 
-@property (strong,nonatomic) NSArray *dataLenta;
-//@property (strong,nonatomic) NSArray *dataGazeta;
+@property (strong,nonatomic) NetworkManager *manager;
 
-
+@property (strong,nonatomic) NSMutableArray *feedsItem;
 
 
 @end

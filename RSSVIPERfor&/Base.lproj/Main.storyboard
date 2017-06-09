@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="38q-VK-0Qm">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="38q-VK-0Qm">
                                             <rect key="frame" x="5" y="5" width="90" height="90"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -100,7 +100,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xo-8s-GJ4">
                                         <rect key="frame" x="0.0" y="-64" width="320" height="504"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="euV-I2-Wwv">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="euV-I2-Wwv">
                                                 <rect key="frame" x="0.0" y="-64" width="320" height="320"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="320" id="bll-MT-JK5"/>
@@ -132,9 +132,9 @@
                                             <constraint firstItem="euV-I2-Wwv" firstAttribute="trailing" secondItem="bzG-eI-tbj" secondAttribute="trailing" id="Kgb-w3-3Md"/>
                                             <constraint firstItem="bzG-eI-tbj" firstAttribute="bottom" secondItem="euV-I2-Wwv" secondAttribute="bottom" constant="-2" id="LeS-Lw-xxc"/>
                                             <constraint firstItem="bzG-eI-tbj" firstAttribute="leading" secondItem="o9B-JQ-eys" secondAttribute="leading" id="Nhc-FT-9rQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="o9B-JQ-eys" secondAttribute="bottom" constant="-2" id="jLU-7u-gMZ"/>
                                             <constraint firstItem="euV-I2-Wwv" firstAttribute="leading" secondItem="2xo-8s-GJ4" secondAttribute="leading" id="luO-bJ-Rjj"/>
                                             <constraint firstAttribute="trailing" secondItem="euV-I2-Wwv" secondAttribute="trailing" id="tUJ-vs-4KZ"/>
+                                            <constraint firstItem="o9B-JQ-eys" firstAttribute="top" secondItem="bzG-eI-tbj" secondAttribute="bottom" constant="3" id="tYt-vE-6y7"/>
                                             <constraint firstItem="euV-I2-Wwv" firstAttribute="top" secondItem="2xo-8s-GJ4" secondAttribute="top" constant="-64" id="tZR-QS-IKk"/>
                                             <constraint firstItem="bzG-eI-tbj" firstAttribute="trailing" secondItem="o9B-JQ-eys" secondAttribute="trailing" id="uIp-Me-A1G"/>
                                         </constraints>
@@ -189,4 +189,7 @@
             <point key="canvasLocation" x="-1093" y="-92"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="noimage.jpeg" width="275" height="275"/>
+    </resources>
 </document>
