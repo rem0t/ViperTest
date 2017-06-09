@@ -17,5 +17,7 @@
 
 @property (strong,nonatomic) NetworkManager *manager;
 
+@property (strong,nonatomic) NSMutableArray *feedsItem;
+
 
 @end

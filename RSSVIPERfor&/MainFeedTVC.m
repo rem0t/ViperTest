@@ -21,6 +21,7 @@
 @end
 
 
+
 @implementation MainFeedTVC
 
 - (void)viewDidLoad {
@@ -43,8 +44,6 @@
 
     
 }
-
-
 
 
 -(void) refreshTableBegin { // not work
@@ -77,6 +76,7 @@
 
 
 
+
 #pragma mark - Table view data source
 
 
@@ -87,7 +87,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.manager.sortedArray count];
+    return [self.manager.sortedArray count]+1;
     
 }
 
@@ -99,28 +99,26 @@
     
     
     RSSItem *item = [self.manager.sortedArray objectAtIndex:indexPath.row];
+   
     
-    castomCell.titleLable.text = item.title;
     
 // **** formating the string
-    
     NSString *separatorString = @"/";
     NSString *myString = item.guid;
     NSString *newStr = [myString substringFromIndex:8];
     NSString *myNewString = [newStr componentsSeparatedByString:separatorString].firstObject;
     
     castomCell.sourceLable.text = myNewString;
-
-    
 // *** do another method for this?
     
     
     NSURL *imageURL = item.link;
-    
-  
     [castomCell.feedImage setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"noimage"]];
     
-  
+    castomCell.titleLable.text = item.title;
+    
+    
+    
     return castomCell;
 }
 
