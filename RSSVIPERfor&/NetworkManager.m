@@ -71,7 +71,7 @@
 
 -(void) feedSortedArray {
     
- self.sortedArray = [[NSMutableArray alloc]initWithArray:_allData];
+self.sortedArray = [[NSMutableArray alloc]initWithArray:_allData];
     
 NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"pubDate" ascending:FALSE];
 [_sortedArray sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
