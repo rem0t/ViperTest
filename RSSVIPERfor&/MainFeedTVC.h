@@ -19,5 +19,11 @@
 
 @property (strong,nonatomic) NSMutableArray *feedsItem;
 
+@property (strong,nonatomic) UIActivityIndicatorView *activity;
+
+-(void) missInternetConnetctionAler:(NSError*)error;
+
+
+
 
 @end

@@ -8,8 +8,9 @@
 
 #import "NetworkManager.h"
 #import "RSSParser.h"
+#import "MainFeedTVC.h"
 
-@interface NetworkManager() {
+@interface NetworkManager() { 
     
     
 }
@@ -40,7 +41,20 @@
         [self parseGazetaMethod];
         
     } failure:^(NSError *error) {
+       
         
+        static dispatch_once_t onceToken; 
+        dispatch_once(&onceToken, ^{
+            
+            MainFeedTVC *foraAlert = [[MainFeedTVC alloc]init];
+            
+            [foraAlert missInternetConnetctionAler:(NSError*)error];
+        
+            
+        });
+
+        
+                
     }];
 }
 
