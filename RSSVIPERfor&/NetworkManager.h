@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkManager : NSObject
-
+@interface NetworkManager : NSObject  
 
 @property (strong,nonatomic) NSArray *dataLenta;
 @property (strong,nonatomic) NSArray *dataGazeta;

@@ -25,17 +25,38 @@
 @implementation MainFeedTVC
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
 
     self.navigationItem.title = @"RSSforRambler&co";
     
+    [self obtainData];
+    
+    [self addPullToRefreshRefreshTable];
+
+    
+}
+
+-(void) addPullToRefreshRefreshTable {
+    
+<<<<<<< HEAD
+
+=======
+    refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(obtainData) forControlEvents:(UIControlEventValueChanged)];
+    [self.tableView addSubview:refreshControl];
+    
+}
+
+
+- (void) obtainData {
     
     self.manager = [[NetworkManager alloc]init];
-
     
     [self.manager parseLentaMethod];
     
-
+    
+>>>>>>> feature/indicatorAndLostNetwork
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable)
                                                  name:@"MyNotification"
@@ -43,11 +64,11 @@
 }
 
 
-
 - (void) refreshTable {
     
-    
     [self.tableView reloadData];
+    
+    [refreshControl endRefreshing];
 
 }
 
@@ -110,7 +131,6 @@
 
 
 
-
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -133,6 +153,22 @@
     
     }
     
+}
+
+
+
+
+
+-(void) missInternetConnetctionAler:(NSError*)error { //Alert for loss internet connetion
+    
+    
+    [[[UIAlertView alloc] initWithTitle:error.localizedDescription
+                                message:error.localizedRecoverySuggestion
+                               delegate:nil
+                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                      otherButtonTitles:nil, nil] show];
+
+
 }
 
 
