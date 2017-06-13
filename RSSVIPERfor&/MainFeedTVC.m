@@ -75,7 +75,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.manager.sortedArray count]+1;
+    return [self.manager.sortedArray count];
     
 }
 
