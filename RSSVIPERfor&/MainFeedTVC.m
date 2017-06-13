@@ -39,9 +39,7 @@
 
 -(void) addPullToRefreshRefreshTable {
     
-<<<<<<< HEAD
 
-=======
     refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(obtainData) forControlEvents:(UIControlEventValueChanged)];
     [self.tableView addSubview:refreshControl];
@@ -56,7 +54,6 @@
     [self.manager parseLentaMethod];
     
     
->>>>>>> feature/indicatorAndLostNetwork
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable)
                                                  name:@"MyNotification"
