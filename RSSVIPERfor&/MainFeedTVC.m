@@ -35,14 +35,11 @@
     
     [self.manager parseLentaMethod];
     
-    
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable)
                                                  name:@"MyNotification"
                                                object:nil];
-
-    
 }
 
 
