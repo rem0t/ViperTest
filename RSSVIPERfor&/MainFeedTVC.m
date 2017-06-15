@@ -26,13 +26,14 @@
 
 - (void)viewDidLoad {
     
+    [self addPullToRefreshRefreshTable];
+
     [super viewDidLoad];
 
     self.navigationItem.title = @"RSSforRambler&co";
     
     [self obtainData];
     
-    [self addPullToRefreshRefreshTable];
 
     
 }
@@ -53,6 +54,7 @@
     [self.manager parseLentaMethod];
     
     
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable)
                                                  name:@"MyNotification"
