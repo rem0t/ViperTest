@@ -26,7 +26,6 @@
 
 - (void)viewDidLoad {
     
-    [self addPullToRefreshRefreshTable];
 
     [super viewDidLoad];
 
@@ -34,6 +33,8 @@
     
     [self obtainData];
     
+    [self addPullToRefreshRefreshTable];
+
 
     
 }
@@ -51,9 +52,8 @@
     
     self.manager = [[NetworkManager alloc]init];
     
+    
     [self.manager parseLentaMethod];
-    
-    
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable)
@@ -166,6 +166,21 @@
                       cancelButtonTitle:NSLocalizedString(@"OK", nil)
                       otherButtonTitles:nil, nil] show];
 
+    
+//    UIAlertController *alert = [UIAlertController
+//                                alertControllerWithTitle:error.localizedDescription
+//                                message:error.localizedRecoverySuggestion
+//                                preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:NULL];
+//    
+//    [alert addAction:okAction];
+//    
+//    [self presentViewController:alert animated:true completion:NULL];
+
+// Warning: Attempt to present <UIAlertController: 0x7aae8e00> on <MainFeedTVC: 0x79e82030> whose view is not in the window hierarchy!
+
+    
 
 }
 
